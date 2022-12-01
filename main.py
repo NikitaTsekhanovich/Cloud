@@ -1,68 +1,34 @@
-import create_folder as cr
-import upload_file as uf
-import download_file as df
-import get_information as gi
-
-
-URL = 'https://cloud-api.yandex.net/v1/disk/resources'
-TOKEN = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
-headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': f'OAuth {TOKEN}'}
+import select_contract as sc
 
 
 def main():
     while True:
-        print()
-        options = ['1', '2', '3', '4', '9']
-        print("What do you want? \n"
-              "1) Create folder \n"
-              "2) Upload file to disk \n"
-              "3) Download file \n"
-              "4) Get information \n"
-              "9) Exit the program\n"
-              "Choose number")
-        choose = input()
+        print("Select cloud: \n"
+              "1) Yandex; \n"
+              "2) Dropbox; \n"
+              "9) Exit the program. \n")
+        select_cloud = input()
 
-        if choose not in options:
-            print("No such answer")
+        if select_cloud == "1":
+            url = 'https://cloud-api.yandex.net/v1/disk/resources'
+            token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+            headers = {'Content-Type': 'application/json', 'Accept': 'application/json',
+                       'Authorization': f'OAuth {token}'}
+            application = "Yandex"
+            sc.select_contracts(url, headers, None, application)
 
-        if choose == '1':
-            print("Name folder?")
-            name_folder = input()
-            cr.create_folder(URL, headers, name_folder)
+        elif select_cloud == "2":
+            url = "https://api.dropboxapi.com/2/"
+            token = "sl.BUGb3b2bwjosXHm-0Ff_jac1wNDEiT0mA9d4rl8WXUyesMTGT7EBPQJVrEulmd_hEkC7Vb_t1fwRFMsdyBi6KQ2pktt8PEHnBpHm24k2uhltrmoSXgwjlQXq_vFJoxa8nEUo3JGV49LN"
+            headers = ""
+            application = "Dropbox"
+            sc.select_contracts(url, headers, token, application)
 
-        if choose == '2':
-            print("Path to download file?\n", r"Example: C:\Cloud")
-            folder = input()
-            print("Path to download file?\n", r"Example: text.txt")
-            file_name = input()
-            print("File name on disk?\n", r"Example: hello/text.txt")
-            name_file_disk = input()
-            print("Replace file on disk if it already exists? yes or no.")
-            replace = input()
-            uf.upload_file(URL, headers, folder, file_name, name_file_disk, replace)
-
-        if choose == '3':
-            print("Download file name?\n")
-            name_file = input()
-            print("Path to download file?\n", r"Example: C:\Cloud")
-            directory = input()
-            df.download_file(URL, headers, name_file, directory)
-
-        if choose == '4':
-            print("Output all data? yes or no")
-            output_all_data = input()
-            if output_all_data == 'yes':
-                name_folder = ''
-                gi.get_information(URL, headers, output_all_data, name_folder)
-            elif output_all_data == 'no':
-                print("What folder or files do you want to find?")
-                name_folder = input()
-                gi.get_information(URL, headers, output_all_data, name_folder)
-            else:
-                print("Error! Yes or no!!!")
-
-        if choose == '9':
+        elif select_cloud == '9':
             break
+
+        else:
+            print("Incorrect input!")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 import unittest
 import download_file as df
-import found_file as ff
+import os
 
 
 class TestUploadFile(unittest.TestCase):
@@ -11,9 +11,10 @@ class TestUploadFile(unittest.TestCase):
         name_file = "hello"
         directory = "C:\Cloud"
 
-        result = df.download_file(url, headers, name_file, directory)
+        result = df.download_file_yandex(url, headers, name_file, directory)
 
         self.assertEqual(result, "Excellent!")
+        os.remove(f"C:\Cloud\hello.zip")
 
     def test_wrong_name(self):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
@@ -22,7 +23,7 @@ class TestUploadFile(unittest.TestCase):
         name_file = "he"
         directory = "C:\Cloud"
 
-        result = df.download_file(url, headers, name_file, directory)
+        result = df.download_file_yandex(url, headers, name_file, directory)
         self.assertEqual(result, "File in disk not found!")
 
     def test_wrong_folder(self):
@@ -32,7 +33,7 @@ class TestUploadFile(unittest.TestCase):
         name_file = "hello"
         directory = "C:\Csdfsdjflksdl"
 
-        result = df.download_file(url, headers, name_file, directory)
+        result = df.download_file_yandex(url, headers, name_file, directory)
         self.assertEqual(result, "Folder not found!")
 
 

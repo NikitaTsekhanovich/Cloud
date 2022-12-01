@@ -8,7 +8,5 @@ def found_file(file_name, folder):
         for element in os.scandir(folder):
             if element.name == file_name:
                 return element.name
-        else:
-            return "Not found file"
     except FileNotFoundError:
         print("Not found folder")
