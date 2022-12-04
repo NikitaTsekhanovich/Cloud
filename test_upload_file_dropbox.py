@@ -3,14 +3,14 @@ import upload_file as uf
 import requests
 
 
-token = 'sl.BUGb3b2bwjosXHm-0Ff_jac1wNDEiT0mA9d4rl8WXUyesMTGT7EBPQJVrEulmd_hEkC7Vb_t1fwRFMsdyBi6KQ2pktt8PEHnBpHm24k2uhltrmoSXgwjlQXq_vFJoxa8nEUo3JGV49LN'
+token = 'sl.BURocvw96mnfisG88VDGqJi8km4bA4ZCZDuCaLR5i89f-rLGGC6WzyJtBOIbqCF9AYPyWP2v5XAdbb5OK0qUe40Ml4N_ACuKb_hmj7_YzGpdKqdLdw2ozl4i7v2HFdSwTP5QrIMhqfcX'
 
 
 class TestUploadFile(unittest.TestCase):
     def test_current_request(self):
         name_file_disk = "home/text.txt"
         file_name = "text.txt"
-        folder = "C:\Cloud"
+        folder = "D:\Cloud"
 
         response = uf.upload_file_dropbox(token, folder, file_name, name_file_disk)
         self.assertEqual(response.status_code, 200)
@@ -32,7 +32,7 @@ class TestUploadFile(unittest.TestCase):
     def test_wrong_file(self):
         name_file_disk = "/home/text.txt"
         file_name = "tt.txt"
-        folder = "C:\Cloud"
+        folder = "D:\Cloud"
 
         response = uf.upload_file_dropbox(token, folder, file_name, name_file_disk)
         self.assertEqual(response, "Not found file")
@@ -40,7 +40,7 @@ class TestUploadFile(unittest.TestCase):
     def test_name_file_disk(self):
         name_file_disk = "12sf_ sd фыа @#"
         file_name = "text.txt"
-        folder = "C:\Cloud"
+        folder = "D:\Cloud"
 
         response = uf.upload_file_dropbox(token, folder, file_name, name_file_disk)
         self.assertEqual(response, "Only english letters!")
@@ -48,7 +48,7 @@ class TestUploadFile(unittest.TestCase):
     def test_empty_name_file_disk(self):
         name_file_disk = ""
         file_name = "text.txt"
-        folder = "C:\Cloud"
+        folder = "D:\Cloud"
 
         response = uf.upload_file_dropbox(token, folder, file_name, name_file_disk)
         self.assertEqual(response, "Name is empty!")

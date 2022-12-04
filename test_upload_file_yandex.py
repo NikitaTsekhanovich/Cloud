@@ -8,7 +8,7 @@ class TestUploadFile(unittest.TestCase):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
         token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': f'OAuth {token}'}
-        folder = "C:\Cloud"
+        folder = "D:\Cloud"
         file_name = "text.txt"
         name_file_disk = "tt.txt"
         replace = "yes"
@@ -34,7 +34,7 @@ class TestUploadFile(unittest.TestCase):
         token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json',
                    'Authorization': f'OAuth {token}'}
-        folder = "C:\Cloud"
+        folder = "D:\Cloud"
         file_name = "t.txt"
         name_file_disk = "tt.txt"
         replace = "yes"
@@ -47,7 +47,7 @@ class TestUploadFile(unittest.TestCase):
         token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json',
                    'Authorization': f'OAuth {token}'}
-        folder = "C:\Cloud"
+        folder = "D:\Cloud"
         file_name = "text.txt"
         name_file_disk = "12sf_ sd фыа @#"
         replace = "yes"
@@ -62,7 +62,7 @@ class TestUploadFile(unittest.TestCase):
         token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json',
                    'Authorization': f'OAuth {token}'}
-        folder = "C:\Cloud"
+        folder = "D:\Cloud"
         file_name = "text.txt"
         name_file_disk = ""
         replace = "yes"
@@ -75,7 +75,7 @@ class TestUploadFile(unittest.TestCase):
         token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json',
                    'Authorization': f'OAuth {token}'}
-        folder = "C:\Cloud"
+        folder = "D:\Cloud"
         file_name = "text.txt"
         name_file_disk = "txxx.txt"
         replace = "fff"

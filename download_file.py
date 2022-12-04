@@ -64,7 +64,6 @@ def download_file_dropbox(url, headers, name_file, directory):
         else:
             print("Error!")
             return "Error!"
-    # elif not file_found_disk and found_directory:
     elif found_directory:
         print("File in disk not found!")
         return "File in disk not found!"

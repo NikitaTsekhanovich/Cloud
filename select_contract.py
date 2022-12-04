@@ -24,7 +24,7 @@ def select_contracts(url, headers, token, application):
             cr.create_folder_yandex(url, headers, name_folder)
 
         if choose == '2':
-            print("Path to download file?\n", r"Example: C:\Cloud")
+            print("Path to download file?\n", r"Example: D:\Cloud")
             folder = input()
             print("Path to download file?\n", r"Example: text.txt")
             file_name = input()
@@ -37,7 +37,7 @@ def select_contracts(url, headers, token, application):
         if choose == '3':
             print("Download file name?\n")
             name_file = input()
-            print("Path to download file?\n", r"Example: C:\Cloud")
+            print("Path to download file?\n", r"Example: D:\Cloud")
             directory = input()
             df.download_file_yandex(url, headers, name_file, directory)
 
@@ -67,7 +67,7 @@ def select_contracts(url, headers, token, application):
             cr.create_folder_dropbox(url, headers, name_folder)
 
         if choose == '2':
-            print("Path to download file?\n", r"Example: C:\Cloud")
+            print("Path to download file?\n", r"Example: D:\Cloud")
             folder = input()
             print("Path to download file?\n", r"Example: text.txt")
             file_name = input()
@@ -78,7 +78,7 @@ def select_contracts(url, headers, token, application):
         if choose == '3':
             print("Download file name?\n", r"Example: tt.txt")
             name_file = input()
-            print("Path to download file?\n", r"Example: C:\Cloud")
+            print("Path to download file?\n", r"Example: D:\Cloud")
             directory = input()
             headers = {
                 'Authorization': f'Bearer {token}',
