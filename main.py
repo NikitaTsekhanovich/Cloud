@@ -11,7 +11,7 @@ def main():
 
         if select_cloud == "1":
             url = 'https://cloud-api.yandex.net/v1/disk/resources'
-            token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+            token = ''
             headers = {'Content-Type': 'application/json', 'Accept': 'application/json',
                        'Authorization': f'OAuth {token}'}
             application = "Yandex"
@@ -19,7 +19,7 @@ def main():
 
         elif select_cloud == "2":
             url = "https://api.dropboxapi.com/2/"
-            token = "sl.BUZtJQKxKoBo_rj4GAiN8vU_5LJWsK0LvdzHwxSfu8gZKv9p8KHhRD0t8rhbdQVq9svDmPG6aaiq9pkvFFuC4F828J_qSeZOIZkoEwmiyPuSub9x6WYPz3aN0Q6DGqdINd7RLjtu5oC1"
+            token = ""
             headers = ""
             application = "Dropbox"
             sc.select_contracts(url, headers, token, application)
