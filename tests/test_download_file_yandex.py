@@ -11,7 +11,7 @@ import os
 class TestUploadFile(unittest.TestCase):
     def test_current_request(self):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
-        token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+        token = ''
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': f'OAuth {token}'}
         name_file = "hello"
         cf.create_folder_yandex(url, headers, name_file)
@@ -25,7 +25,7 @@ class TestUploadFile(unittest.TestCase):
 
     def test_wrong_name(self):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
-        token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+        token = ''
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': f'OAuth {token}'}
         name_file = "he"
         directory = "D:\Cloud"
@@ -35,7 +35,7 @@ class TestUploadFile(unittest.TestCase):
 
     def test_wrong_folder(self):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
-        token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+        token = ''
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': f'OAuth {token}'}
         name_file = "hello"
         directory = "C:\Csdfsdjflksdl"

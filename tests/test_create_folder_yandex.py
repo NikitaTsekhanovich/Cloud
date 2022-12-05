@@ -9,7 +9,7 @@ import requests
 class TestCreateFolderYandex(unittest.TestCase):
     def test_current_name_yandex(self):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
-        token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+        token = ''
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': f'OAuth {token}'}
         current_name = 'hello'
         response = cf.create_folder_yandex(url, headers, current_name)
@@ -18,7 +18,7 @@ class TestCreateFolderYandex(unittest.TestCase):
 
     def test_all_symbols_yandex(self):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
-        token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+        token = ''
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': f'OAuth {token}'}
         all_symbols = 'he 23 ,.@ вфы'
         response = cf.create_folder_yandex(url, headers, all_symbols)
@@ -27,7 +27,7 @@ class TestCreateFolderYandex(unittest.TestCase):
 
     def test_empty_name_yandex(self):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
-        token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+        token = ''
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json',
                    'Authorization': f'OAuth {token}'}
         empty_name = ''
@@ -36,7 +36,7 @@ class TestCreateFolderYandex(unittest.TestCase):
 
     def test_same_name_yandex(self):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
-        token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+        token = ''
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json',
                    'Authorization': f'OAuth {token}'}
         name = 'folder'

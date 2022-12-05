@@ -9,7 +9,7 @@ import requests
 class TestUploadFile(unittest.TestCase):
     def test_current_request(self):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
-        token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+        token = ''
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': f'OAuth {token}'}
         folder = "D:\Cloud"
         file_name = "text.txt"
@@ -22,7 +22,7 @@ class TestUploadFile(unittest.TestCase):
 
     def test_wrong_folder(self):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
-        token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+        token = ''
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': f'OAuth {token}'}
         folder = "C:\Cgfhhdrtd"
         file_name = "text.txt"
@@ -34,7 +34,7 @@ class TestUploadFile(unittest.TestCase):
 
     def test_wrong_file(self):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
-        token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+        token = ''
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json',
                    'Authorization': f'OAuth {token}'}
         folder = "D:\Cloud"
@@ -47,7 +47,7 @@ class TestUploadFile(unittest.TestCase):
 
     def test_name_file_disk(self):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
-        token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+        token = ''
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json',
                    'Authorization': f'OAuth {token}'}
         folder = "D:\Cloud"
@@ -62,7 +62,7 @@ class TestUploadFile(unittest.TestCase):
 
     def test_empty_name_file_disk(self):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
-        token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+        token = ''
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json',
                    'Authorization': f'OAuth {token}'}
         folder = "D:\Cloud"
@@ -75,7 +75,7 @@ class TestUploadFile(unittest.TestCase):
 
     def test_wrong_replace(self):
         url = 'https://cloud-api.yandex.net/v1/disk/resources'
-        token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
+        token = ''
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json',
                    'Authorization': f'OAuth {token}'}
         folder = "D:\Cloud"
