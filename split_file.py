@@ -13,7 +13,6 @@ def split_file(file_name):
                     break
                 output.write(data)
                 bytes_written += len(data)
-                # print('write', len(data), 'bytes to', output_file_name)
             else:
                 output.close()
                 current_volume += 1

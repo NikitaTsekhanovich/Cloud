@@ -73,7 +73,7 @@ def select_contracts(url, headers, token, application):
             file_name = input()
             print("File name on disk? Only english letters!\n", r"Example: home/text.txt")
             name_file_disk = input()
-            uf.upload_file_dropbox(url, token, folder, file_name, name_file_disk)
+            uf.upload_file_dropbox(token, folder, file_name, name_file_disk)
 
         if choose == '3':
             print("Download file name?\n", r"Example: tt.txt")

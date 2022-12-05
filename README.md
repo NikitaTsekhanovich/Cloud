@@ -1,4 +1,4 @@
-Цеханович Никита. Фт-103-1
+Цеханович Никита. Фт-203
 Описание
 Программа, которая выполняет создание, загрузку и скачивание файлов/папок, а также выдает данные о файлах, которые хранятся в облаке.
 
@@ -7,7 +7,7 @@
 нужно ввести.
 
 Проект состоит из:
-menu.py - определен токен, ссылка на облако и заголовки. В методе main() задаются сценарии программы.
+menu.py - определен токен, ссылка на облако и заголовки. В методе main() можно выбрать облако.
 
 create_folder.py - создает папку в облаке.
 
@@ -19,8 +19,20 @@ get_information.py - выводит информацию о файлах на д
 
 found_file.py - поиск файла в директориях на компьютере. Вспомогательный метод, который проверяет правильность входных данных от пользователя. 
 
-test_create_folder.py - тестирует create_folder.py.
+select_contract.py - выводит функционал программы.
 
-test_upload_file.py - тестирует upload_file.py.
+split_file.py - вспомогательный метод, который "режет" файл на части. Нужен, чтобы загружать файлы размером более 1 гб.
 
-test_download_file.py - тестирует download_file.py.
+Папка tests - папка, в которой находятся тесты.
+
+test_create_folder_yandex.py - тестирует в create_folder.py создание папки в облаке yandex.
+
+test_upload_file_yandex.py - тестирует в upload_file.py загрузку файла в облако yandex.
+
+test_download_file_yandex.py - тестирует в download_file.py скачивание файла из облака yandex.
+
+test_create_folder_dropbox.py - тестирует в create_folder.py создание папки в облаке dropbox.
+
+test_upload_file_dropbox.py - тестирует в upload_file.py загрузку файла в облако dropbox.
+
+test_download_file_dropbox.py - тестирует в download_file.py скачивание файла из облака dropbox.

@@ -1,8 +1,11 @@
+import sys
+import os
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import unittest
-import create_folder as cf
 import requests
+import create_folder as cf
 
-token = 'sl.BURocvw96mnfisG88VDGqJi8km4bA4ZCZDuCaLR5i89f-rLGGC6WzyJtBOIbqCF9AYPyWP2v5XAdbb5OK0qUe40Ml4N_ACuKb_hmj7_YzGpdKqdLdw2ozl4i7v2HFdSwTP5QrIMhqfcX'
+token = 'sl.BUZtJQKxKoBo_rj4GAiN8vU_5LJWsK0LvdzHwxSfu8gZKv9p8KHhRD0t8rhbdQVq9svDmPG6aaiq9pkvFFuC4F828J_qSeZOIZkoEwmiyPuSub9x6WYPz3aN0Q6DGqdINd7RLjtu5oC1'
 
 
 class TestCreateFolderDropbox(unittest.TestCase):

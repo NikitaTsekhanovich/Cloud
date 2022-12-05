@@ -48,9 +48,7 @@ def upload_file_yandex(url, headers, folder, file_name, name_file_disk, replace)
                     try:
                         request = requests.get(f'{url}/upload?path={name_without_extension}/{file_in_disk}&overwrite='
                                                f'{replace}', headers=headers).json()
-                        print(request)
-                        response = requests.put(request['href'], files={'file': f})
-                        print(response.status_code)
+                        requests.put(request['href'], files={'file': f})
                     except KeyError:
                         return "Empty name file disk or wrong replace!"
                 os.remove(f'{folder}\{file_to_upload}')
@@ -63,8 +61,7 @@ def upload_file_yandex(url, headers, folder, file_name, name_file_disk, replace)
         return "Not found folder"
 
 
-def upload_file_dropbox(url, token, folder, file_name, name_file_disk):
-    # Максимальный размер передаваемого файла: 2 ТБ.
+def upload_file_dropbox(token, folder, file_name, name_file_disk):
     alphabet_and_numbers = list('abcdefghijklmnopqrstuvwxyz1234567890')
     for letter in name_file_disk.lower():
         if letter not in alphabet_and_numbers and letter != "/" and letter != ".":
@@ -106,13 +103,6 @@ def upload_file_dropbox(url, token, folder, file_name, name_file_disk):
             number_of_files = sf.split_file(file_name_zip.filename)
             file_name_zip.close()
             os.remove(f"{folder}\{name_without_extension}.zip")
-
-            # headers = {
-            #     'Authorization': f'Bearer {token}',
-            #     'Content-Type': 'application/json'
-            # }
-
-            # cf.create_folder_dropbox(url, headers, name_without_extension)
             print("Files created")
             print(f'Number of files: {number_of_files}')
             print("loading...")
@@ -130,11 +120,8 @@ def upload_file_dropbox(url, token, folder, file_name, name_file_disk):
                                                '"strict_conflict": false}',
                             'Content-Type': 'application/octet-stream'
                         }
-                        response = requests.post('https://content.dropboxapi.com/2/files/upload', headers=headers,
-                                                 data=data)
-                        print(response.status_code)
-                        print(response.text)
-
+                        requests.post('https://content.dropboxapi.com/2/files/upload',
+                                      headers=headers, data=data)
                     except KeyError:
                         return "Empty name file disk or wrong replace!"
                 os.remove(f'{folder}\{file_to_upload}')

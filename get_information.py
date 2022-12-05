@@ -16,5 +16,5 @@ def get_information_yandex(URL, headers, output_all_data, name_folder):
 
 
 def get_information_dropbox(url, headers):
-    response = requests.post('https://api.dropboxapi.com/2/file_requests/count', headers=headers)
+    response = requests.post(f'{url}file_requests/count', headers=headers)
     print(response.text)

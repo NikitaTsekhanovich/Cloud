@@ -1,3 +1,8 @@
+import sys
+import os
+import requests
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
+import create_folder as cf
 import unittest
 import download_file as df
 import os
@@ -9,11 +14,13 @@ class TestUploadFile(unittest.TestCase):
         token = 'y0_AgAAAAAQYR9KAAh4ZgAAAADQfjk_bKIgrybFTXCKscIlG_h7KSCIOoA'
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': f'OAuth {token}'}
         name_file = "hello"
+        cf.create_folder_yandex(url, headers, name_file)
         directory = "D:\Cloud"
 
         result = df.download_file_yandex(url, headers, name_file, directory)
 
         self.assertEqual(result, "Excellent!")
+        requests.delete(f'{url}?path={name_file}&permanently=true', headers=headers)
         os.remove(f"D:\Cloud\hello.zip")
 
     def test_wrong_name(self):

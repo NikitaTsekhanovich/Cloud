@@ -19,7 +19,7 @@ def main():
 
         elif select_cloud == "2":
             url = "https://api.dropboxapi.com/2/"
-            token = "sl.BUWyzg3x3CcLLUOawPl8vaOMWhdfwFEcVCePZ4ngHZEIGmROaH1YKDnBhE5TIVqd1KhPmH1yYNOAJ5JhhrKZc2O4YDz4_w9JeATLbU0ypk6YpOqN1IkakwA-fT1ymHWfCqZWVYFHNGAw"
+            token = "sl.BUZtJQKxKoBo_rj4GAiN8vU_5LJWsK0LvdzHwxSfu8gZKv9p8KHhRD0t8rhbdQVq9svDmPG6aaiq9pkvFFuC4F828J_qSeZOIZkoEwmiyPuSub9x6WYPz3aN0Q6DGqdINd7RLjtu5oC1"
             headers = ""
             application = "Dropbox"
             sc.select_contracts(url, headers, token, application)

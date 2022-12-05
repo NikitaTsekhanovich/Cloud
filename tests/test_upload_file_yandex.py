@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import unittest
 import upload_file as uf
 import requests
