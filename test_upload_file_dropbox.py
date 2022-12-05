@@ -3,7 +3,8 @@ import upload_file as uf
 import requests
 
 
-token = 'sl.BURocvw96mnfisG88VDGqJi8km4bA4ZCZDuCaLR5i89f-rLGGC6WzyJtBOIbqCF9AYPyWP2v5XAdbb5OK0qUe40Ml4N_ACuKb_hmj7_YzGpdKqdLdw2ozl4i7v2HFdSwTP5QrIMhqfcX'
+token = "sl.BUUQ-Dp6QtI7aJvlSK1zr_enZYR1LvKi6VMrHws4Nw9V2j_W5WtdzFoqYri1uFznvlS3TbMN85MFmpwz3esoWGuARSyisPoI3GqwFH59NNMrq4DSajCT0BNCLbo7tIPZGI58gD2MaOaz"
+url = 'https://api.dropboxapi.com/2/'
 
 
 class TestUploadFile(unittest.TestCase):
@@ -12,7 +13,7 @@ class TestUploadFile(unittest.TestCase):
         file_name = "text.txt"
         folder = "D:\Cloud"
 
-        response = uf.upload_file_dropbox(token, folder, file_name, name_file_disk)
+        response = uf.upload_file_dropbox(url, token, folder, file_name, name_file_disk)
         self.assertEqual(response.status_code, 200)
         data = '{"path" : "/home/text.txt"}'
         headers = {
@@ -26,7 +27,7 @@ class TestUploadFile(unittest.TestCase):
         file_name = "text.txt"
         folder = "C:\Cgfhhdrtd"
 
-        response = uf.upload_file_dropbox(token, folder, file_name, name_file_disk)
+        response = uf.upload_file_dropbox(url, token, folder, file_name, name_file_disk)
         self.assertEqual(response, "Not found file")
 
     def test_wrong_file(self):
@@ -34,7 +35,7 @@ class TestUploadFile(unittest.TestCase):
         file_name = "tt.txt"
         folder = "D:\Cloud"
 
-        response = uf.upload_file_dropbox(token, folder, file_name, name_file_disk)
+        response = uf.upload_file_dropbox(url, token, folder, file_name, name_file_disk)
         self.assertEqual(response, "Not found file")
 
     def test_name_file_disk(self):
@@ -42,7 +43,7 @@ class TestUploadFile(unittest.TestCase):
         file_name = "text.txt"
         folder = "D:\Cloud"
 
-        response = uf.upload_file_dropbox(token, folder, file_name, name_file_disk)
+        response = uf.upload_file_dropbox(url, token, folder, file_name, name_file_disk)
         self.assertEqual(response, "Only english letters!")
 
     def test_empty_name_file_disk(self):
@@ -50,7 +51,7 @@ class TestUploadFile(unittest.TestCase):
         file_name = "text.txt"
         folder = "D:\Cloud"
 
-        response = uf.upload_file_dropbox(token, folder, file_name, name_file_disk)
+        response = uf.upload_file_dropbox(url, token, folder, file_name, name_file_disk)
         self.assertEqual(response, "Name is empty!")
 
 

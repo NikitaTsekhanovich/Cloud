@@ -16,9 +16,9 @@ def create_folder_yandex(url, headers, name_folder):
 
 
 def create_folder_dropbox(url, headers, name_folder):
-    alphabet = list('abcdefghijklmnopqrstuvwxyz')
-    for letter in name_folder:
-        if letter not in alphabet:
+    alphabet_and_numbers = list('abcdefghijklmnopqrstuvwxyz1234567890')
+    for letter in name_folder.lower():
+        if letter not in alphabet_and_numbers:
             print("Only english letters!")
             return "Only english letters!"
     if name_folder == "":

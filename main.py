@@ -19,14 +19,13 @@ def main():
 
         elif select_cloud == "2":
             url = "https://api.dropboxapi.com/2/"
-            token = "sl.BURocvw96mnfisG88VDGqJi8km4bA4ZCZDuCaLR5i89f-rLGGC6WzyJtBOIbqCF9AYPyWP2v5XAdbb5OK0qUe40Ml4N_ACuKb_hmj7_YzGpdKqdLdw2ozl4i7v2HFdSwTP5QrIMhqfcX"
+            token = "sl.BUWyzg3x3CcLLUOawPl8vaOMWhdfwFEcVCePZ4ngHZEIGmROaH1YKDnBhE5TIVqd1KhPmH1yYNOAJ5JhhrKZc2O4YDz4_w9JeATLbU0ypk6YpOqN1IkakwA-fT1ymHWfCqZWVYFHNGAw"
             headers = ""
             application = "Dropbox"
             sc.select_contracts(url, headers, token, application)
 
         elif select_cloud == '9':
             break
-
         else:
             print("Incorrect input!")
 
